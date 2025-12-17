@@ -33,6 +33,12 @@
         placeholder="Enter your home ratings"
         class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+       <input
+        name="homeUrl"
+        type="text"
+        placeholder="Enter your home image url"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
       <input
         type="submit"
         value="Add Home"
@@ -49,7 +55,10 @@
     <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
 
       <div class="p-5 space-y-3">
-        
+                  <div class="w-full h-[150px]">
+         <img
+  <img class="w-full h-full"src="<%= homes.homeUrl || '/Image/homeImage.jpeg' %>" alt="Home">
+  </div>
         <h2 class="text-xl font-semibold text-gray-800">
           <%= homes.homeName %>
         </h2>
