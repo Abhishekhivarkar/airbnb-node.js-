@@ -1,22 +1,25 @@
- <header class="w-full">
-    <nav class="flex justify-between px-10 w-full items-center shadow-lg py-2">
-      <div class="text-2xl text-white [text-stroke:2px_black] px-4 py-2 rounded-full bg-red-200">airbnb</div>
-      <div class="flex gap-3 ">
-          <a class="text-red-900 nav-btn" href="/">Home</a>
-<a href="/user/bookings"
-   class="nav-btn">
-   Bookings
-</a>
-<a href="/user/favourite"
-   class="nav-btn">
-   Favourites
-</a>
-            <a  href="/user/info-form" class="nav-btn">Form</a>
+<header class="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-8 py-3">
     
-        <a href="/user/contact-us" class="nav-btn">Contact-us</a>
-        
-         <a href="/host/home" class="nav-btn">Host</a>
-         
-      </div>
-    </nav>
-  </header>
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-rose-500 tracking-tight">
+      airbnb
+    </div>
+
+    <!-- Links -->
+    <div class="flex items-center gap-6 text-sm font-medium">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/user/bookings" class="nav-link">Bookings</a>
+      <a href="/user/favourite" class="nav-link">Favourites</a>
+      <a href="/user/info-form" class="nav-link">Form</a>
+      <a href="/user/contact-us" class="nav-link">Contact</a>
+
+      <!-- CTA -->
+      <a href="/host/home"
+         class="ml-4 px-5 py-2 rounded-full bg-rose-500 text-white font-semibold hover:bg-rose-600 transition">
+        Become a Host
+      </a>
+    </div>
+
+  </nav>
+</header>

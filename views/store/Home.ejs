@@ -1,39 +1,80 @@
 <%- include('../partials/Head') %>
-<body class="bg-gray-100 text-gray-900">
+
+<body class="bg-gray-50 text-gray-900 min-h-screen">
   <%- include('../partials/Nav') %>
 
-  <main class="min-h-screen p-6">
+  <main class="max-w-7xl mx-auto px-6 py-12">
 
     <!-- Header -->
-    <div class="max-w-4xl mx-auto mb-6">
-      <h1 class="text-center text-4xl font-semibold text-red-500">
-        Welcome
+    <div class="mb-10 text-center">
+      <h1 class="text-4xl font-bold text-gray-900">
+        Find your next stay
       </h1>
+      <p class="text-gray-500 mt-2">
+        Hand-picked homes for your comfort
+      </p>
     </div>
 
     <!-- Cards Grid -->
-    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <% homeData.map((data) => { %>
-        <div class="bg-white rounded shadow p-4 text-sm space-y-1">
-          <div class="w-full h-[150px]">
-         <img
-  <img class="w-full h-full"src="<%= data.homeUrl || '/Image/homeImage.jpeg' %>" alt="Home">
-  </div>
-          <p class="font-medium"><%= data.houseName %></p>
-          <p class="text-gray-600">₹ <%= data.homePrice %></p>
-          <p class="text-gray-600"><%= data.homeLocation %></p>
-          <div class="flex justify-between items-center">
-          <p class="text-yellow-600">⭐ <%= data.homeRatings %></p>
-          
-          <div class="flex justify-between items-center gap-2">
-           <button class="bg-violet-300 rounded-lg p-2"><a href="/home-details">View Details</a></button>
-          <button class="bg-green-300 rounded-lg p-2">Book</button>
-          </div >
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <% homeData.forEach((data) => { %>
+        <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
+
+          <!-- Image -->
+          <div class="h-52 bg-gray-200">
+            <img
+              class="w-full h-full object-cover"
+              src="<%= data.homeUrl || '/Image/homeImage.jpeg' %>"
+              alt="Home"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="p-5 space-y-3">
+
+            <h2 class="text-lg font-semibold text-gray-900 truncate">
+              <%= data.houseName %>
+            </h2>
+
+            <p class="text-sm text-gray-500">
+              📍 <%= data.homeLocation %>
+            </p>
+
+            <div class="flex justify-between items-center">
+              <div class="text-lg font-bold text-gray-900">
+                ₹ <%= data.homePrice %>
+                <span class="text-sm font-normal text-gray-500">/ night</span>
+              </div>
+
+              <div class="text-sm font-medium text-yellow-500">
+                ⭐ <%= data.homeRatings %>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex gap-3 pt-3">
+              <a
+                href="/home-details"
+                class="flex-1 text-center py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition"
+              >
+                View details
+              </a>
+
+              <button
+                class="flex-1 py-2 rounded-full bg-rose-500 text-white text-sm font-semibold hover:bg-rose-600 transition"
+              >
+                Book now
+              </button>
+            </div>
+
           </div>
         </div>
       <% }) %>
+
     </div>
 
   </main>
+
 </body>
 </html>
