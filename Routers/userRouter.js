@@ -3,7 +3,9 @@ import {
   formController,
   postFormController,
   contactUsController,
-  postContactUsController
+  postContactUsController,
+  homeBookings,
+homeFavourites
 } from "../controller/userController.js"
 
 
@@ -16,4 +18,6 @@ userRouter.post("/user-info",postFormController)
 userRouter.get("/contact-us",contactUsController)
 
 userRouter.post("/contact-us",postContactUsController)
+userRouter.get("/bookings",homeBookings)
+userRouter.get("/favourite",homeFavourites)
 export default userRouter

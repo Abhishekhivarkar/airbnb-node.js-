@@ -11,8 +11,8 @@ const getListHomeController = (req,res,next)=>{
 }
 
 const postListHomeController = (req,res,next)=>{
-  const {houseName,homePrice,homeLocation,homeRatings} = req.body
-  const home = new hostModel(houseName,homePrice,homeLocation,homeRatings)
+  const {houseName,homePrice,homeLocation,homeRatings,homeUrl} = req.body
+  const home = new hostModel(houseName,homePrice,homeLocation,homeRatings,homeUrl)
   home.save()
   
   return res.send(`<h1>thanks</h1>

@@ -11,3 +11,4 @@ export const homeDetailsController = (req,res,next)=>{
 
 
 export default homeController
+

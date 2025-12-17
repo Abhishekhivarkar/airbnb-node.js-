@@ -5,11 +5,12 @@ const __path = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__path)
 let homeData = []
 class hostModel {
-  constructor(houseName,homePrice,homeLocation,homeRatings){
+  constructor(houseName,homePrice,homeLocation,homeRatings,homeUrl){
     this.houseName = houseName;
     this.homePrice = homePrice;
     this.homeLocation = homeLocation;
     this.homeRatings = homeRatings;
+    this.homeUrl = homeUrl
   }
   save(){
     console.log(this)
