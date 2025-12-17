@@ -1,0 +1,79 @@
+<%- include('../partials/Head') %>
+<body class="bg-gray-100 text-gray-900">
+  <%- include('../partials/Nav') %>
+
+  <main class="max-w-md mx-auto mt-10 bg-white p-6 rounded shadow">
+
+    <h1 class="text-2xl font-semibold mb-4">
+      Add Your Home
+    </h1>
+
+    <form action="/host/list-home" method="POST" class="space-y-4">
+      <input
+        name="houseName"
+        type="text"
+        placeholder="Enter your home name"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+ <input
+        name="homePrice"
+        type="number"
+        placeholder="Enter your home price"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+       <input
+        name="homeLocation"
+        type="text"
+        placeholder="Enter your home location"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+        <input
+        name="homeRatings"
+        type="number"
+        placeholder="Enter your home ratings"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="submit"
+        value="Add Home"
+        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 cursor-pointer"
+      />
+    </form>
+
+
+
+  </main>
+  <div class="max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <% homeData.forEach((homes) => { %>
+    <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+
+      <div class="p-5 space-y-3">
+        
+        <h2 class="text-xl font-semibold text-gray-800">
+          <%= homes.homeName %>
+        </h2>
+
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>📍 <%= homes.homeLocation %></span>
+          <span class="font-medium text-yellow-500">
+            ⭐ <%= homes.homeRating %>
+          </span>
+        </div>
+<div class="flex justify-between items-center">
+        <div class="text-lg font-bold text-blue-600">
+          ₹ <%= homes.homePrice %> <span class="text-sm font-normal text-gray-500">/ night</span>
+        </div>
+        <div>
+          <button class="bg-yellow-300 rounded-lg p-2">Edit</button>
+          <button class="bg-red-300 rounded-lg p-2">Delete</button>
+        </div>
+</div>
+      </div>
+
+    </div>
+  <% }) %>
+
+</div>
+</body>
+</html>
